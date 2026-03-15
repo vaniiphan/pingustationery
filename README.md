@@ -10,10 +10,10 @@ The project focuses on combining a friendly visual style with a simple and acces
 
 **Members 팀원**
 
-- Nguyễn Khanh Ha
-- Le Thanh Bao Ngoc
-- Pham Vu Anh Thu
-- Phan Khanh Van
+- Nguyễn Khanh Ha (Product Page)
+- Le Thanh Bao Ngoc (Idea Planning/Moodboard)
+- Pham Vu Anh Thu (Product Description, Progress Updates)
+- Phan Khanh Van (Main Page)
 
 ---
 
