@@ -842,3 +842,280 @@ transform:scale(1.05);
     width: 40px;   /* chỉnh size logo */
     height: auto;
 }
+
+/* overlay */
+.cart-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+display:none;
+z-index:998;
+}
+
+/* sidebar */
+.cart-sidebar{
+position:fixed;
+top:0;
+right:-350px;
+width:300px;
+height:100%;
+background:white;
+display:flex;
+flex-direction:column; /* QUAN TRỌNG */
+transition:0.3s ease;
+z-index:999;
+}
+
+/* open */
+.cart-sidebar.active{
+right:0;
+}
+
+.cart-overlay.active{
+display:block;
+}
+
+/* header */
+.cart-header{
+display:flex;
+justify-content:space-between;
+padding:20px;
+border-bottom:1px solid #eee;
+}
+
+.cart-header span{
+cursor:pointer;
+font-size:22px;
+}
+
+/* content */
+.cart-content{
+flex:1;          
+padding:20px;
+overflow-y:auto;
+}
+
+.empty{
+color:#888;
+text-align:center;
+margin-top:50px;
+}
+
+/* PRODUCT */
+
+.product-info{
+max-width:400px;
+}
+
+.product-title{
+font-size:32px;
+margin-bottom:15px;
+}
+
+/* PRICE */
+
+.price{
+margin-bottom:20px;
+}
+
+.new-price{
+color:#e07a84;
+font-size:22px;
+font-weight:bold;
+margin-right:10px;
+}
+
+.old-price{
+color:#999;
+text-decoration:line-through;
+}
+
+/* QUANTITY */
+
+.qty-label{
+display:block;
+margin-bottom:8px;
+}
+
+.qty-input{
+width:120px;
+padding:10px;
+border:1px solid #ddd;
+margin-bottom:20px;
+}
+
+/* ADD BUTTON */
+
+.add-btn{
+background:#e07a84;
+color:white;
+border:none;
+padding:14px;
+width:100%;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.add-btn:hover{
+background:#c9656f;
+}
+
+/* CART FOOTER */
+.cart-footer{
+padding:20px;
+border-top:1px solid #eee;
+}
+
+.checkout-btn{
+width:100%;
+padding:14px;
+background:#e07a84;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+/* DISABLED */
+
+.checkout-btn.disabled{
+background:#ccc;
+cursor:not-allowed;
+}
+
+/* BLOG SECTION */
+.blog-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+/* GRID */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* CARD */
+.blog-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: left;
+  cursor: pointer;
+
+  /* đẹp hơn */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+/* hover xịn */
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* TEXT */
+.blog-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+}
+
+.article {
+  display: none;
+}
+
+#blogPage, #articlePage {
+  transition: 0.3s;
+}
+
+.about-img{
+width:100%;
+border-radius:10px;
+  object-fit: cover;
+}
+
+/* AUTHOR */
+.article-meta {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.blog-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+/* overlay content */
+.blog-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+.blog-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.blog-content p {
+  font-size: 14px;
+  opacity: 0.9;
+  color: rgb(200, 189, 189);
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  border-bottom: 1px solid white;
+  font-size: 13px;
+}
+
+/* hover effect */
+.blog-card:hover img {
+  transform: scale(1.05);
+}
+
+.blog-card:hover .blog-content {
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
