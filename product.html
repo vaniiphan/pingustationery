@@ -19,7 +19,26 @@
 
 <!-- HEADER -->
 <header class="shop-header">
+<!-- OVERLAY -->
+<div id="cartOverlay" class="cart-overlay" onclick="closeCart()"></div>
 
+<!-- SIDEBAR -->
+<div id="cartSidebar" class="cart-sidebar">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <span onclick="closeCart()">×</span>
+  </div>
+  
+  <div class="cart-content" id="cartContent">
+    <!-- Sản phẩm sẽ được đổ vào đây -->
+    <p class="empty">Your cart is empty</p>
+  </div>
+  
+  <div class="cart-footer">
+    <p style="font-size: 18px; font-weight: bold;">Total: <span id="cartTotal">$0</span></p>
+    <button id="checkoutBtn" class="checkout-btn disabled">Checkout</button>
+  </div>
+</div>
 <!-- TOP BAR -->
 <div class="top-bar content padding-16" >
 
@@ -30,8 +49,7 @@
 
 <div class="account-links">
 <a href="#">Sign In</a>
-<a href="#"><i class="fa fa-shopping-cart"></i> Cart</a>
-</div>
+<a href="cart.html" onclick="event.preventDefault(); openCart()"><i class="fa fa-shopping-cart"></i> Cart</a></div>
 
 </div>
 
@@ -43,15 +61,14 @@
 
 <!-- CATEGORY MENU -->
 <nav class="category-nav container content" >
-
-<ul>
-<li><a href="index.html#">HOME</a></li>
-<li><a href="index.html#newarrivals">NEW ARRIVALS</a></li>
-<li><a href="index.html#themes">THEMES</a></li>
-<li><a href="index.html#aboutus">ABOUT US</a></li>
-<li><a href="index.html#contact">CONTACT</a></li>
-
-</ul>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop.html">SHOP</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="cart.html">CART</a></li>
+      </ul>
 </nav>
 
 <!-- 1ST PRODUCT -->
@@ -66,13 +83,13 @@
 <!-- LEFT: IMAGES -->
 <div class="product-gallery">
 
-<img id="main-image" src="study.png" class="main-image">
+<img id="main-image" src="img/study.png" class="main-image">
 
 <div class="thumbnail-grid">
 
-<img src="study.png" class="thumb" onclick="changeImage(this)">
-<img src="study2.png" class="thumb" onclick="changeImage(this)">
-<img src="study3.png" class="thumb" onclick="changeImage(this)">
+<img src="img/study.png" class="thumb" onclick="changeImage(this)">
+<img src="img/study2.png" class="thumb" onclick="changeImage(this)">
+<img src="img/study3.png" class="thumb" onclick="changeImage(this)">
 
 </div>
 
@@ -91,9 +108,7 @@
 
 <label class="stupid" style="margin-bottom: 10px">Quantity</label><br>
 <input class="input border" style="max-width: 150px; margin-top: 4px" type="number" value="1" min="1"><br>
-<button class="cart-btn input" style="max-width: 150px;">Add to Cart</button>
-
-<p class="description">
+<button class="cart-btn input" style="max-width: 150px;" onclick="addToCart(1, 'Pingu Rainy Day Stationery Set', 19)">Add to Cart</button><p class="description">
 A cozy little collection inspired by quiet rainy afternoons. The <b>Pingu Rainy Day Stationery Set</b> features cool pastel tones and soft holographic details that shimmer like tiny raindrops.
 
 The centerpiece is a transparent spiral notebook with holographic rain-drop accents, paired with two gel pens, cheerful weather-themed stickers, and a decorative washi tape roll for journaling or crafting. Everything is designed to make even the rainiest study sessions feel calm and creative.
@@ -131,13 +146,13 @@ Perfect for journaling, decorating planners, or adding a dreamy aesthetic to you
 <div class="product-gallery">
 
 <img id="main-image"
-src="station.png" class="main-image">
+src="img/station.png" class="main-image">
 
 <div class="thumbnail-grid">
 
-<img src="station.png" class="thumb" onclick="changeImage(this)">
-<img src="station1.png" class="thumb" onclick="changeImage(this)">
-<img src="station2.png" class="thumb" onclick="changeImage(this)">
+<img src="img/station.png" class="thumb" onclick="changeImage(this)">
+<img src="img/station1.png" class="thumb" onclick="changeImage(this)">
+<img src="img/station2.png" class="thumb" onclick="changeImage(this)">
 
 </div>
 
@@ -156,8 +171,7 @@ src="station.png" class="main-image">
 
 <label class="stupid" style="margin-bottom: 10px">Quantity</label><br>
 <input class="input border" style="max-width: 150px; margin-top: 4px" type="number" value="1" min="1"><br>
-<button class="cart-btn input" style="max-width: 150px;">Add to Cart</button>
-
+<button class="cart-btn input" style="max-width: 150px;" onclick="addToCart(2, 'Pingu School Essentials Kit', 29)">Add to Cart</button>
 <p class="description">
 Start the school day with a little extra joy. The <b>Pingu School Essentials Kit</b> brings together four everyday stationery tools in one charming pastel-themed set, featuring the playful Pingu character across each item. Designed for both practicality and cuteness, this kit is perfect for students, journaling lovers, and anyone who enjoys brightening their desk with adorable stationery.
 
@@ -209,13 +223,13 @@ A compact cream-and-blue sharpener with a removable shavings container to keep y
 <div class="product-gallery">
 
 <img id="main-image"
-src="notebook.png" class="main-image">
+src="img/notebook.png" class="main-image">
 
 <div class="thumbnail-grid">
 
-<img src="notebook.png" class="thumb" onclick="changeImage(this)">
-<img src="notebook1.png" class="thumb" onclick="changeImage(this)">
-<img src="notebook2.png" class="thumb" onclick="changeImage(this)">
+<img src="img/notebook.png" class="thumb" onclick="changeImage(this)">
+<img src="img/notebook1.png" class="thumb" onclick="changeImage(this)">
+<img src="img/notebook2.png" class="thumb" onclick="changeImage(this)">
 
 </div>
 
@@ -234,9 +248,7 @@ src="notebook.png" class="main-image">
 
 <label class="stupid" style="margin-bottom: 10px">Quantity</label><br>
 <input class="input border" style="max-width: 150px; margin-top: 4px" type="number" value="1" min="1"><br>
-<button class="cart-btn input" style="max-width: 150px;">Add to Cart</button>
-
-<p class="description">
+<button class="cart-btn input" style="max-width: 150px;" onclick="addToCart(3, 'Pingu Classic Notebook Duo', 13)">Add to Cart</button><p class="description">
 Minimalist design meets cozy stationery aesthetics. The <b>Pingu Classic Notebook Duo</b> features a soft nude-tone cover with a subtle illustration of Pingu and friends along the bottom edge—simple, calming, and quietly playful.
 
 The flexible cover makes it easy to slip into a backpack, tote, or coat pocket, while the elastic closure band keeps your pages protected wherever you go. Whether you’re jotting down ideas, organizing your day, or writing reminders between classes, this notebook keeps everything neatly in one place.
@@ -273,13 +285,13 @@ Small, elegant, and always ready when inspiration strikes.
 <div class="product-gallery">
 
 <img id="main-image"
-src="lunar.png" class="main-image">
+src="img/lunar.png" class="main-image">
 
 <div class="thumbnail-grid">
 
-<img src="lunar.png" class="thumb" onclick="changeImage(this)">
-<img src="lunar1.png" class="thumb" onclick="changeImage(this)">
-<img src="lunar2.png" class="thumb" onclick="changeImage(this)">
+<img src="img/lunar.png" class="thumb" onclick="changeImage(this)">
+<img src="img/lunar1.png" class="thumb" onclick="changeImage(this)">
+<img src="img/lunar2.png" class="thumb" onclick="changeImage(this)">
 
 </div>
 
@@ -296,8 +308,7 @@ src="lunar.png" class="main-image">
 
 <label class="stupid" style="margin-bottom: 10px">Quantity</label><br>
 <input class="input border" style="max-width: 150px; margin-top: 4px" type="number" value="1" min="1"><br>
-<button class="cart-btn input" style="max-width: 150px;">Add to Cart</button>
-
+<button class="cart-btn input" style="max-width: 150px;" onclick="addToCart(4, 'Lunar Collection', 39)">Add to Cart</button>
 <p class="description">
 Celebrate fresh beginnings with the <b>Pingu Lunar New Year Stationery Set</b>, a festive collection filled with vibrant red, gold accents, and lucky symbolism.
 
@@ -334,13 +345,13 @@ Designed to bring both creativity and celebration to your desk, it’s the perfe
 <div class="product-gallery">
 
 <img id="main-image"
-src="latern.png" class="main-image">
+src="img/latern.png" class="main-image">
 
 <div class="thumbnail-grid">
 
-<img src="latern.png" class="thumb" onclick="changeImage(this)">
-<img src="latern1.png" class="thumb" onclick="changeImage(this)">
-<img src="latern2.png" class="thumb" onclick="changeImage(this)">
+<img src="img/latern.png" class="thumb" onclick="changeImage(this)">
+<img src="img/latern1.png" class="thumb" onclick="changeImage(this)">
+<img src="img/latern2.png" class="thumb" onclick="changeImage(this)">
 
 </div>
 
@@ -357,8 +368,7 @@ src="latern.png" class="main-image">
 
 <label class="stupid" style="margin-bottom: 10px">Quantity</label><br>
 <input class="input border" style="max-width: 150px; margin-top: 4px" type="number" value="1" min="1"><br>
-<button class="cart-btn input" style="max-width: 150px;">Add to Cart</button>
-
+<button class="cart-btn input" style="max-width: 150px;" onclick="addToCart(5, 'Midnight Lantern', 42)">Add to Cart</button>
 <p class="description">
 Inspired by quiet nights and glowing lanterns, the Pingu Midnight Lantern Stationery Set blends deep navy blues with warm golden accents for a magical evening aesthetic.
 
@@ -395,13 +405,13 @@ Elegant yet playful, this set is perfect for journaling, creative planning, or k
 <div class="product-gallery">
 
 <img id="main-image"
-src="love.png" class="main-image">
+src="img/love.png" class="main-image">
 
 <div class="thumbnail-grid">
 
-<img src="love.png" class="thumb" onclick="changeImage(this)">
-<img src="love1.png" class="thumb" onclick="changeImage(this)">
-<img src="love2.png" class="thumb" onclick="changeImage(this)">
+<img src="img/love.png" class="thumb" onclick="changeImage(this)">
+<img src="img/love1.png" class="thumb" onclick="changeImage(this)">
+<img src="img/love2.png" class="thumb" onclick="changeImage(this)">
 
 </div>
 
@@ -418,8 +428,7 @@ src="love.png" class="main-image">
 
 <label class="stupid" style="margin-bottom: 10px">Quantity</label><br>
 <input class="input border" style="max-width: 150px; margin-top: 4px" type="number" value="1" min="1"><br>
-<button class="cart-btn input" style="max-width: 150px;">Add to Cart</button>
-
+<button class="cart-btn input" style="max-width: 150px;" onclick="addToCart(6, 'Sweet Confession', 37)">Add to Cart</button>
 <p class="description">
 Soft pink tones and tiny heart details make the <b>Sweet Confession Stationery Set</b> feel like a love letter waiting to be written.
 
@@ -458,13 +467,13 @@ Whether you’re writing letters, journaling your day, or decorating a planner, 
 <div class="product-gallery">
 
 <img id="main-image"
-src="pen.png" class="main-image">
+src="img/pen.png" class="main-image">
 
 <div class="thumbnail-grid">
 
-<img src="pen.png" class="thumb" onclick="changeImage(this)">
-<img src="pen1.png" class="thumb" onclick="changeImage(this)">
-<img src="pen2.png" class="thumb" onclick="changeImage(this)">
+<img src="img/pen.png" class="thumb" onclick="changeImage(this)">
+<img src="img/pen1.png" class="thumb" onclick="changeImage(this)">
+<img src="img/pen2.png" class="thumb" onclick="changeImage(this)">
 
 </div>
 
@@ -483,15 +492,14 @@ src="pen.png" class="main-image">
 
 <label class="stupid" style="margin-bottom: 10px">Quantity</label><br>
 <input class="input border" style="max-width: 150px; margin-top: 4px" type="number" value="1" min="1"><br>
-<button class="cart-btn input" style="max-width: 150px;">Add to Cart</button>
-
+<button class="cart-btn input" style="max-width: 150px;" onclick="addToCart(7, 'Pingu Dreamy Sky Pencil Case', 15)">Add to Cart</button>
 <p class="description">
 Keep all your stationery neatly organized with the <b>Pingu Dreamy Sky Pencil Case</b>, a soft pastel storage pouch inspired by calm skies and cozy study moments. Featuring a playful illustration of Pingu relaxing on a stack of books surrounded by tiny stars and sparkles, this pencil case adds a light, cheerful touch to your everyday school essentials.
 
 The spacious zippered compartment easily holds pens, pencils, highlighters, erasers, and small accessories, while the durable fabric keeps everything protected inside your backpack. A cute Pingu character zipper charm adds an extra bit of personality and makes opening the case even more fun.
 
 Perfect for students, artists, and stationery lovers who enjoy keeping their supplies both organized and adorable.
-<br><br><b>Details:</b>>
+<br><br><b>Details:</b>
 </p>
 
 <ul class="features">
@@ -521,13 +529,13 @@ Perfect for students, artists, and stationery lovers who enjoy keeping their sup
 <div class="product-gallery">
 
 <img id="main-image"
-src="bag.png" class="main-image">
+src="img/bag.png" class="main-image">
 
 <div class="thumbnail-grid">
 
-<img src="bag.png" class="thumb" onclick="changeImage(this)">
-<img src="bag1.png" class="thumb" onclick="changeImage(this)">
-<img src="bag2.png" class="thumb" onclick="changeImage(this)">
+<img src="img/bag.png" class="thumb" onclick="changeImage(this)">
+<img src="img/bag1.png" class="thumb" onclick="changeImage(this)">
+<img src="img/bag2.png" class="thumb" onclick="changeImage(this)">
 
 </div>
 
@@ -543,8 +551,7 @@ src="bag.png" class="main-image">
 
 <label class="stupid" style="margin-bottom: 10px">Quantity</label><br>
 <input class="input border" style="max-width: 150px; margin-top: 4px" type="number" value="1" min="1"><br>
-<button class="cart-btn input" style="max-width: 150px;">Add to Cart</button>
-
+<button class="cart-btn input" style="max-width: 150px;" onclick="addToCart(8, 'Pingu Cozy Study Organizer Bag', 29)">Add to Cart</button>
 <p class="description">
 Meet the <b>Pingu Cozy Study Organizer Bag</b>, designed for those who like their stationery collections neat, safe, and easy to carry. With its soft cream-colored exterior and charming Pingu illustrations, this bag feels both playful and practical.
 
@@ -581,13 +588,13 @@ A small Pingu zipper charm and scattered star details give the bag a whimsical s
 <div class="product-gallery">
 
 <img id="main-image"
-src="cal.png" class="main-image">
+src="img/cal.png" class="main-image">
 
 <div class="thumbnail-grid">
 
-<img src="cal.png" class="thumb" onclick="changeImage(this)">
-<img src="cal1.png" class="thumb" onclick="changeImage(this)">
-<img src="cal2.png" class="thumb" onclick="changeImage(this)">
+<img src="img/cal.png" class="thumb" onclick="changeImage(this)">
+<img src="img/cal1.png" class="thumb" onclick="changeImage(this)">
+<img src="img/cal2.png" class="thumb" onclick="changeImage(this)">
 
 </div>
 
@@ -606,8 +613,7 @@ src="cal.png" class="main-image">
 
 <label class="stupid" style="margin-bottom: 10px">Quantity</label><br>
 <input class="input border" style="max-width: 150px; margin-top: 4px" type="number" value="1" min="1"><br>
-<button class="cart-btn input" style="max-width: 150px;">Add to Cart</button>
-
+<button class="cart-btn input" style="max-width: 150px;" onclick="addToCart(9, 'Pingu Study Buddy Calculator', 26)">Add to Cart</button>
 <p class="description">
 Make numbers a little more fun with the Pingu Study Buddy Calculator, a charming desk companion designed for students, planners, and stationery lovers alike. Featuring soft pastel tones and a cozy illustration of Pingu studying with a laptop and books, this calculator turns everyday calculations into a cheerful part of your study routine.
 
@@ -730,5 +736,6 @@ img.classList.add("active");
 
 }
 </script>
+<script src="script.js"></script>
 </body>
 </html>

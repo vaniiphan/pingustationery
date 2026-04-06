@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>PinguStationery 핑구 문구점</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://kit.fontawesome.com/093f7e1b29.js" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<!-- HEADER -->
+<header class="shop-header">
+
+<!-- TOP BAR -->
+<div class="top-bar content padding-16" >
+
+<div class="search">
+<i class="fa fa-search"></i>
+<input type="text" placeholder="Search">
+</div>
+
+<div class="account-links">
+<a href="#">Sign In</a>
+<a href="#"><i class="fa fa-shopping-cart"></i> Cart</a>
+</div>
+
+</div>
+
+<!-- SHOP TITLE -->
+<div class="shop-title" >
+<h1>PinguStationery</h1>
+</div>
+
+
+<!-- CATEGORY MENU -->
+<nav class="category-nav container content" >
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop.html">SHOP</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="cart.html">CART</a></li>
+      </ul>
+</nav>
+
+<!-- BLOG -->
+<div class="container content padding-64" style="max-width:800px" id="blogPage">
+<h2 class="title center">BLOG</h2>
+<p class="opacity center"><i>PinguStationery와 계속 연결하세요.</i></p>
+
+<div class="blog-card row padding-32" data-id="1">
+    <img src="img/blog1.png" alt="blog1">
+    <div class="blog-content">
+      <h3>How Pingu Shop Started</h3>
+      <p>A soft beginning of a small dreamy shop...</p>
+      <span class="read-more">Read More</span>
+    </div>
+  </div>
+<div class="blog-card row padding-32" data-id="2">
+    <img src="img/blog2.png" alt="blog2">
+    <div class="blog-content">
+      <h3>Top 5 Cute Stationery Items</h3>
+      <p>Little things that make studying happier ✿</p>
+      <span class="read-more">Read More</span>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE AREA -->
+<div id="articlePage" style="display:none; max-width:800px" class="container content padding-64">
+  
+<!-- ARTICLE 1 -->
+  <div class="article" id="article-1">
+    <h1>How Pingu Shop Started</h1>
+
+        <!-- Author -->
+    <div class="article-meta">
+      <span>By <b>Cakey</b></span>
+      <span>• April 2026</span>
+    </div>
+<p class="justify">Every small shop begins with something very un-glamorous: a random idea that refuses to leave.
+<br><br>
+Pingu Shop started the same way. It wasn’t some grand business plan or a sudden burst of genius. It was just a quiet love for small, cute things, the kind that make ordinary days feel a little softer. Sticky notes, tiny notebooks, pens that glide too smoothly for their own good… things that don’t change your life, but somehow make it better.
+<br><br>
+At first, it was just collecting. Then sharing. Then came the moment where “maybe I should turn this into something real” stopped sounding ridiculous.
+<br><br>
+Of course, it wasn’t easy. There were doubts, awkward beginnings, and that constant question: “Is anyone even going to care?” But slowly, piece by piece, Pingu Shop became more than just a collection of products. It became a space where people could find small joys, the kind you don’t really need, but somehow can’t resist.
+<br><br>
+And honestly, that’s the whole point. Not everything has to be practical. Sometimes, it just has to make you smile.</p><br><br>
+  </div>
+
+<!-- ARTICLE 2 -->
+  <div class="article" id="article-2">
+    <h1>Top 5 Cute Stationery Items</h1>
+
+    <!-- Author -->
+    <div class="article-meta">
+      <span>By <b>Strawberry</b></span>
+      <span>• September 2025</span>
+    </div>
+    <p class="justify">There are two types of people: those who buy stationery to use… and those who buy it because it’s too cute to touch.
+If you’re here, you already know which one you are.
+Here are 5 stationery items that somehow make studying feel less painful:
+<br><br>
+<b>1. Pastel Highlighters</b>
+They do the exact same job as normal highlighters. But suddenly your notes look like they belong to someone who has their life together.
+<br><br>
+<b>2. Mini Notebooks</b>
+Too small for serious work, too cute to ignore. Perfect for random thoughts, to-do lists, or pretending you’re organized.
+<br><br>
+<b>3. Character Stickers</b>
+Zero academic value. Maximum emotional support.
+<br><br>
+<b>4. Gel Pens</b>
+Smooth ink, satisfying writing, and just enough aesthetic to make you want to write one more line.
+<br><br>
+<b>5. Sticky Notes</b>  
+You’ll buy them for productivity and end up using them to decorate everything instead.
+<br><br>
+At the end of the day, cute stationery doesn’t magically make you more productive. But it makes the process a little more enjoyable… and sometimes, that’s enough to keep going.</p><br><br>
+  </div>
+
+<!-- BACK BUTTON -->
+  <button class="cart-btn" onclick="goBack()">← Back</button>
+</div>
+</div>
+
+<div class="opacity footer">
+<footer class="footer container padding-64 opacity content">
+<div class="footer-container">
+
+<!-- QUICK LINKS -->
+<div class="footer-col">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="#newarrivals">New Arrivals</a></li>
+<li><a href="#themes">Themes</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ul>
+</div>
+
+<!-- SOCIAL -->
+<div class="footer-col">
+<h3>Follow Us</h3>
+<footer class="container center  opacity light-grey">
+<a href="https://facebook.com/" class="hover-opacity" target="_blank">
+  <i class="fa-brands fa-facebook hover-opacity"></i>
+</a>
+<a href="https://instagram.com/" class="hover-opacity" target="_blank">
+  <i class="fa-brands fa-instagram hover-opacity"></i>
+</a>
+<a href="https://www.snapchat.com/" class="hover-opacity" target="_blank">
+  <i class="fa-brands fa-snapchat hover-opacity"></i>
+</a>
+<a href="https://www.threads.net/" class="hover-opacity" target="_blank">
+  <i class="fa-brands fa-threads hover-opacity"></i>
+</a>
+<a href="https://pinterest.com/" class="hover-opacity" target="_blank">
+  <i class="fa-brands fa-pinterest hover-opacity"></i>
+</a>
+</footer>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="footer-col newsletter">
+<h3>Newsletter</h3>
+<p>
+Sign up for subscriber-only discounts, first look at newly-curated items and latest updates.
+</p>
+<input type="email" placeholder="Your email" class="input border">
+<button>Subscribe</button>
+</div>
+</div>
+
+<!-- COPYRIGHT -->
+<div class="copyright">
+© 2019–2026 Pingustationery. 모든 권리 보유.
+</div>
+</footer>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const blogCards = document.querySelectorAll(".blog-card");
+  const blogPage = document.getElementById("blogPage");
+  const articlePage = document.getElementById("articlePage");
+
+  blogCards.forEach(card => {
+    card.addEventListener("click", () => {
+      const id = card.getAttribute("data-id");
+
+      blogPage.style.display = "none";
+      articlePage.style.display = "block";
+
+      document.querySelectorAll(".article").forEach(a => {
+        a.style.display = "none";
+      });
+
+      document.getElementById("article-" + id).style.display = "block";
+    });
+  });
+});
+
+function goBack() {
+  document.getElementById("articlePage").style.display = "none";
+  document.getElementById("blogPage").style.display = "block";
+}
+</script>
+</body>
+</html>

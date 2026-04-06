@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cart - PinguStationery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/093f7e1b29.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <style>
+    /* CSS bổ sung gọn nhẹ cho riêng bảng giỏ hàng */
+    .cart-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    .cart-table th, .cart-table td { border-bottom: 1px solid #ddd; padding: 15px; text-align: center; }
+    .cart-table th { background-color: #f9f9f9; font-weight: bold; }
+    .qty-btn { padding: 5px 12px; cursor: pointer; background: #e07a84; color: white; border: none; border-radius: 4px; font-size: 16px; }
+    .qty-btn:hover { background: #c9656f; }
+    .remove-btn { cursor: pointer; color: #971c15; background: none; border: none; font-size: 18px; }
+    .cart-total-container { text-align: right; margin-top: 30px; font-size: 20px; }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="shop-header">
+    <div class="top-bar content padding-16">
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="account-links">
+        <a href="#">Sign In</a>
+<a href="cart.html" onclick="event.preventDefault(); openCart()"><i class="fa fa-shopping-cart"></i> Cart</a>
+      </div>
+    </div>
+    <div class="shop-title">
+      <h1>PinguStationery</h1>
+    </div>
+    <nav class="category-nav container content">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="shop.html">SHOP</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="cart.html">CART</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CART CONTENT -->
+  <div class="container content padding-64">
+    <h2 class="title center">🛒 YOUR CART</h2>
+    
+    <table class="cart-table" id="cartTable">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS sẽ render HTML vào đây -->
+      </tbody>
+    </table>
+
+    <div class="cart-total-container">
+      <p><b>Total:</b> <span id="grandTotal" style="color: #e07a84; font-weight: bold;">$0</span></p>
+      <button class="button black margin-top">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    // ===== KHỞI TẠO GIỎ HÀNG =====
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // ===== LƯU GIỎ HÀNG =====
+    function saveCart() {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    // ===== HIỂN THỊ GIỎ HÀNG =====
+    function renderCart() {
+      const tbody = document.querySelector("#cartTable tbody");
+      const totalEl = document.getElementById("grandTotal");
+      tbody.innerHTML = "";
+
+      if (cart.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="padding: 30px; color: #888;">Your cart is empty.</td></tr>`;
+        totalEl.innerText = "$0";
+        return;
+      }
+
+      let grandTotal = 0;
+
+      cart.forEach(item => {
+        let itemTotal = item.price * item.quantity;
+        grandTotal += itemTotal;
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td style="font-weight: bold;">${item.name}</td>
+          <td>$${item.price}</td>
+          <td>
+            <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
+            <span style="margin: 0 15px; font-size: 16px;">${item.quantity}</span>
+            <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+          </td>
+          <td style="font-weight: bold;">$${itemTotal}</td>
+          <td>
+            <button class="remove-btn" onclick="removeItem(${item.id})"><i class="fa fa-trash"></i></button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+
+      totalEl.innerText = "$" + grandTotal;
+    }
+
+    // ===== TĂNG/GIẢM SỐ LƯỢNG =====
+    function changeQty(id, delta) {
+      let item = cart.find(i => i.id === id);
+      if (!item) return;
+
+      item.quantity += delta;
+      
+      // Nếu giảm xuống 0 hoặc âm thì xóa luôn sản phẩm
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+
+      saveCart();
+      renderCart();
+    }
+
+    // ===== XÓA SẢN PHẨM =====
+    function removeItem(id) {
+      cart = cart.filter(i => i.id !== id);
+      saveCart();
+      renderCart();
+    }
+
+    // ===== GỌI HÀM KHI TẢI TRANG =====
+    renderCart();
+  </script>
+</body>
+</html>
