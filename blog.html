@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <title>PinguStationery 핑구 문구점</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="stylesheet" href="style.css">
-
 <script src="https://kit.fontawesome.com/093f7e1b29.js" crossorigin="anonymous"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
-
 </head>
 
-
 <body>
+
+<!-- OVERLAY -->
+<div id="cartOverlay" class="cart-overlay" onclick="closeCart()"></div>
+
+<!-- SIDEBAR -->
+<div id="cartSidebar" class="cart-sidebar">
+<div class="cart-header">
+<h3>Your Cart</h3>
+<span onclick="closeCart()">×</span>
+</div>
+<div class="cart-content" id="cartContent">
+<p class="empty">Your cart is empty</p>
+</div>
+<div class="cart-footer">
+
+<p>Total: <span id="cartTotal">$0</span></p>
+
+<button id="checkoutBtn" class="checkout-btn disabled">
+Checkout
+</button>
+
+</div>
+</div>
 
 <!-- HEADER -->
 <header class="shop-header">
 
 <!-- TOP BAR -->
 <div class="top-bar content padding-16" >
-
 <div class="search">
 <i class="fa fa-search"></i>
 <input type="text" placeholder="Search">
 </div>
-
 <div class="account-links">
 <a href="#">Sign In</a>
-<a href="#"><i class="fa fa-shopping-cart"></i> Cart</a>
-</div>
-
+<a href="cart.html" onclick="event.preventDefault(); openCart()">
+<i class="fa fa-shopping-cart"></i> Cart
+</a></div>
 </div>
 
 <!-- SHOP TITLE -->
@@ -57,7 +72,7 @@
 <div class="container content padding-64" style="max-width:800px" id="blogPage">
 <h2 class="title center">BLOG</h2>
 <p class="opacity center"><i>PinguStationery와 계속 연결하세요.</i></p>
-
+<br>
 <div class="blog-card row padding-32" data-id="1">
     <img src="blog1.png" alt="blog1">
     <div class="blog-content">
@@ -66,6 +81,7 @@
       <span class="read-more">Read More</span>
     </div>
   </div>
+  <br><br>
 <div class="blog-card row padding-32" data-id="2">
     <img src="blog2.png" alt="blog2">
     <div class="blog-content">
@@ -214,6 +230,16 @@ document.addEventListener("DOMContentLoaded", function () {
 function goBack() {
   document.getElementById("articlePage").style.display = "none";
   document.getElementById("blogPage").style.display = "block";
+}
+  
+/* CART */
+function openCart(){
+document.getElementById("cartSidebar").classList.add("active");
+document.getElementById("cartOverlay").classList.add("active");
+}
+function closeCart(){
+document.getElementById("cartSidebar").classList.remove("active");
+document.getElementById("cartOverlay").classList.remove("active");
 }
 </script>
 </body>
