@@ -21,17 +21,46 @@
 
 <body>
   <!-- HEADER -->
-  <header class="shop-header">
-    <div class="top-bar content padding-16">
-      <div class="search">
-        <i class="fa fa-search"></i>
-        <input type="text" placeholder="Search">
-      </div>
-      <div class="account-links">
-        <a href="#">Sign In</a>
-<a href="cart.html" onclick="event.preventDefault(); openCart()"><i class="fa fa-shopping-cart"></i> Cart</a>
-      </div>
-    </div>
+<header class="shop-header">
+<!-- OVERLAY -->
+<div id="cartOverlay" class="cart-overlay" onclick="closeCart()"></div>
+
+<!-- SIDEBAR -->
+<div id="cartSidebar" class="cart-sidebar">
+<div class="cart-header">
+<h3>Your Cart</h3>
+<span onclick="closeCart()">×</span>
+</div>
+<div class="cart-content" id="cartContent">
+<p class="empty">Your cart is empty</p>
+</div>
+<div class="cart-footer">
+
+<p>Total: <span id="cartTotal">$0</span></p>
+
+<button id="checkoutBtn" class="checkout-btn disabled">
+Checkout
+</button>
+
+</div>
+</div>
+
+<!-- HEADER -->
+<header class="shop-header">
+
+<!-- TOP BAR -->
+<div class="top-bar content padding-16" >
+<div class="search">
+<i class="fa fa-search"></i>
+<input type="text" placeholder="Search">
+</div>
+<div class="account-links">
+<a href="#">Sign In</a>
+<a href="cart.html" onclick="event.preventDefault(); openCart()">
+<i class="fa fa-shopping-cart"></i> Cart
+</a></div>
+</div>
+
     <div class="shop-title">
       <h1>PinguStationery</h1>
     </div>
@@ -48,7 +77,7 @@
   </header>
 
   <!-- CART CONTENT -->
-  <div class="container content padding-64">
+  <div class="container content padding-64" style="max-width:800px">
     <h2 class="title center">🛒 YOUR CART</h2>
     
     <table class="cart-table" id="cartTable">
@@ -62,12 +91,11 @@
         </tr>
       </thead>
       <tbody>
-        <!-- JS sẽ render HTML vào đây -->
       </tbody>
     </table>
 
     <div class="cart-total-container">
-      <p><b>Total:</b> <span id="grandTotal" style="color: #e07a84; font-weight: bold;">$0</span></p>
+      <p><b>Total:</b> <span id="grandTotal" style="color: #ea858f; font-weight: bold;">$0</span></p>
       <button class="button black margin-top">Proceed to Checkout</button>
     </div>
   </div>
@@ -144,6 +172,17 @@
 
     // ===== GỌI HÀM KHI TẢI TRANG =====
     renderCart();
+
+    /* CART */
+function openCart(){
+document.getElementById("cartSidebar").classList.add("active");
+document.getElementById("cartOverlay").classList.add("active");
+}
+function closeCart(){
+document.getElementById("cartSidebar").classList.remove("active");
+document.getElementById("cartOverlay").classList.remove("active");
+}
+
   </script>
 </body>
 </html>
