@@ -17,22 +17,43 @@
 
 <body>
 
+<!-- OVERLAY -->
+<div id="cartOverlay" class="cart-overlay" onclick="closeCart()"></div>
+
+<!-- SIDEBAR -->
+<div id="cartSidebar" class="cart-sidebar">
+<div class="cart-header">
+<h3>Your Cart</h3>
+<span onclick="closeCart()">×</span>
+</div>
+<div class="cart-content" id="cartContent">
+<p class="empty">Your cart is empty</p>
+</div>
+<div class="cart-footer">
+
+<p>Total: <span id="cartTotal">$0</span></p>
+
+<button id="checkoutBtn" class="checkout-btn disabled">
+Checkout
+</button>
+
+</div>
+</div>
+
 <!-- HEADER -->
 <header class="shop-header">
 
 <!-- TOP BAR -->
 <div class="top-bar content padding-16" >
-
 <div class="search">
 <i class="fa fa-search"></i>
 <input type="text" placeholder="Search">
 </div>
-
 <div class="account-links">
 <a href="#">Sign In</a>
-<a href="#"><i class="fa fa-shopping-cart"></i> Cart</a>
-</div>
-
+<a href="cart.html" onclick="event.preventDefault(); openCart()">
+<i class="fa fa-shopping-cart"></i> Cart
+</a></div>
 </div>
 
 <!-- SHOP TITLE -->
@@ -146,5 +167,19 @@ Sign up for subscriber-only discounts, first look at newly-curated items and lat
 </div>
 </footer>
 </div>
+
+<script>
+  
+/* CART */
+function openCart(){
+document.getElementById("cartSidebar").classList.add("active");
+document.getElementById("cartOverlay").classList.add("active");
+}
+function closeCart(){
+document.getElementById("cartSidebar").classList.remove("active");
+document.getElementById("cartOverlay").classList.remove("active");
+}
+</script>
+
 </body>
 </html>
