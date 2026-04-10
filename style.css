@@ -1159,11 +1159,6 @@ img{
   height:auto;
 }
 
-@media (max-width: 768px){
-  .col,.half,.third{
-    width:100% !important;
-  }
-}
 
 body{
   overflow-x:hidden;
@@ -1336,4 +1331,125 @@ body{
   align-items: center;
   padding: 10px 40px;
   width: 100%;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+
+}
+
+/* Mobile lớn */
+@media (max-width: 768px) {
+
+}
+
+/* Mobile nhỏ */
+@media (max-width: 576px) {
+
+}
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 992px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+}
+
+.mySlides img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 992px) {
+  .third {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .third {
+    width: 100% !important;
+  }
+}
+@media (max-width: 768px) {
+  .container,
+  .content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .category-nav li {
+    margin: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+} 
+
+img {
+  max-width: 100%;
+  height: auto;
 }
